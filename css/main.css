@@ -49,10 +49,89 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
+.main-title {
+  border: 3px solid black;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 30px auto;
+  position: relative;
+}
+.main-title::before,
+.main-title::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+.main-title::before {
+  left: -25%;
+}
+.main-title::after {
+  right: -25%;
+}
+.main-title:hover.main-title::before {
+  z-index: 1;
+  animation: move-left-dots 1s linear forwards ;
+}
+@keyframes move-left-dots {
+  50% {
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+  }
+  100% {
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+
+  }
+}
+
+
+.main-title:hover.main-title::after {
+  z-index: 1;
+  animation: move-right-dots 1s linear forwards ;
+}
+@keyframes move-right-dots {
+  50% {
+    right: 0%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+
+  }
+  100% {
+    right: 0%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+
+  }
+}
+.main-title:hover {
+  color: white;
+  border: 3px solid white;
+  transition-delay: 0.5s;
+
+}
+
+
 /* End Global Rules */
 
 /* Start Section Header */
-
 
 .logo h2 {
   color: var(--main-color);
@@ -105,21 +184,16 @@ nav ul li a {
   border-bottom: 2px solid var(--main-color);
   padding: 10px 0px;
   position: absolute;
-  top: 15%; 
+  top: 15%;
   width: 100%;
   z-index: 100;
   opacity: 0;
   transition: var(--main-transition);
 }
 
-nav ul li a:last-child:hover .mega-menu{
+nav ul li a:last-child:hover .mega-menu {
   background-color: red;
-
 }
-
-
-
-
 
 .mega-content {
   width: 80%;
@@ -134,7 +208,7 @@ nav ul li a:last-child:hover .mega-menu{
   padding: 10px 0px;
 }
 .mega-content ul li:not(:last-child) {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
 }
 .mega-content ul li a {
   color: var(--main-color);
@@ -187,7 +261,7 @@ nav ul li a:last-child:hover .mega-menu{
   }
 
   .mega-content ul:first-of-type li:last-child {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #ddd;
   }
 }
 /* End Section Header */
@@ -195,6 +269,8 @@ nav ul li a:last-child:hover .mega-menu{
 /* Start Section Home */
 .home {
   position: relative;
+  /* background-color: white; */
+  height: 80vh;
 }
 
 .home h1 {
@@ -206,7 +282,7 @@ nav ul li a:last-child:hover .mega-menu{
   width: 80%;
   line-height: 1.6;
   font-size: 20px;
-  color: #66668D;
+  color: #66668d;
 }
 
 .home::before {
@@ -274,11 +350,17 @@ nav ul li a:last-child:hover .mega-menu{
 
   .home .text {
     margin-top: 15%;
+    height: 40vh;
+    align-content: center;
     text-align: center;
+    background-color: red;
+    
   }
 
   .home .text p {
     margin: auto;
   }
 }
+
 /* End Section Home */
+
