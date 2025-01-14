@@ -13,7 +13,9 @@ html {
 :root {
   --main-color: #2196f3;
   --alternate-color: #6ed1fa;
+  --grey-color: #ececec;
   --main-transition: all 0.5s;
+  --box-shadow: 0px -3px 44px -4px rgba(0, 0, 0, 0.75);
 }
 ul {
   list-style: none;
@@ -55,7 +57,7 @@ a {
   width: fit-content;
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 30px auto;
+  margin: 100px auto;
   position: relative;
 }
 .main-title::before,
@@ -78,7 +80,7 @@ a {
 }
 .main-title:hover.main-title::before {
   z-index: 1;
-  animation: move-left-dots 1s linear forwards ;
+  animation: move-left-dots 1s linear forwards;
 }
 @keyframes move-left-dots {
   50% {
@@ -94,14 +96,12 @@ a {
     height: 100%;
     border-radius: 0;
     z-index: -1;
-
   }
 }
 
-
 .main-title:hover.main-title::after {
   z-index: 1;
-  animation: move-right-dots 1s linear forwards ;
+  animation: move-right-dots 1s linear forwards;
 }
 @keyframes move-right-dots {
   50% {
@@ -110,7 +110,6 @@ a {
     height: 100%;
     border-radius: 0;
     z-index: -1;
-
   }
   100% {
     right: 0%;
@@ -118,16 +117,17 @@ a {
     height: 100%;
     border-radius: 0;
     z-index: -1;
-
   }
+}
+.main-title {
+  text-transform: uppercase;
 }
 .main-title:hover {
   color: white;
+  background-color: var(--main-color);
   border: 3px solid white;
   transition-delay: 0.5s;
-
 }
-
 
 /* End Global Rules */
 
@@ -353,8 +353,6 @@ nav ul li a:last-child:hover .mega-menu {
     height: 40vh;
     align-content: center;
     text-align: center;
-    background-color: red;
-    
   }
 
   .home .text p {
@@ -364,3 +362,258 @@ nav ul li a:last-child:hover .mega-menu {
 
 /* End Section Home */
 
+/* Start Section Articles */
+.articles {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* grid-template-columns: repeat(4 , minmax(200px , 1fr)); */
+  gap: 30px 10px;
+}
+.articles .card {
+  /* width: 25%; */
+  box-shadow: 0px 0px 1px black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--main-transition);
+}
+.card .card-image img {
+  width: 100%;
+}
+.card-text,
+.card-footer {
+  padding: 15px;
+}
+.card p {
+  color: #66668d;
+}
+.card-footer {
+  border: 1px solid #ddd;
+  color: var(--main-color);
+}
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: var(--box-shadow);
+}
+.card:hover:hover .card-footer i {
+  animation: arrow-move 1s linear infinite;
+}
+@keyframes arrow-move {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+}
+/* End Section Articles */
+
+/* Start section gallery */
+.gallery {
+  background-color: var(--grey-color);
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.gallery .box {
+  background-color: white;
+  padding: 20px;
+  /* overflow: hidden; */
+}
+.gallery .box .gallery-image {
+  overflow: hidden;
+  position: relative;
+}
+.gallery .box .gallery-image::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: var(--main-transition);
+}
+.gallery .box .gallery-image:hover::before {
+  animation: flashing 0.5s;
+}
+@keyframes flashing {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+.gallery .box .gallery-image img {
+  width: 100%;
+  transition: var(--main-transition);
+}
+.gallery .box .gallery-image:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* End section gallery */
+
+/* start section features */
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.features .container .feat-image img {
+  width: 100%;
+}
+.features .container .box {
+  border: 1px solid var(--grey-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.features .container .box .box-body {
+  padding: 15px;
+  text-align: center;
+  line-height: 1.6;
+}
+.box-body h2 {
+  font-size: 30px;
+}
+.box-body p {
+  font-size: 20px;
+  color: #777;
+  margin: 15px;
+}
+.box-body button {
+  background-color: transparent;
+  padding: 10px 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  margin: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.features .container .feat-image {
+  overflow: hidden;
+  position: relative;
+}
+.features .box .feat-image::before {
+  content: "";
+  position: absolute;
+
+  right: 0%;
+  bottom: 0%;
+  border-style: solid;
+  border-width: 0px 0px 150px 500px;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition);
+  z-index: 1;
+}
+.features .box:hover .feat-image::before {
+  border-width: 170px 500px 150px 0px;
+}
+
+.features .box .feat-image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+}
+.quality .feat-image::after {
+  background-color: rgba(246, 0, 0, 0.214);
+
+}
+.time .feat-image::after {
+  background-color: rgba(9, 252, 171, 0.214);
+
+}
+.passion .feat-image::after {
+  background-color: rgba(5, 251, 255, 0.214);
+
+}
+
+.box-body h2 {
+  position: relative;
+}
+.box-body h2::after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 4px;
+}
+.quality h2::after {
+  background-color: red;
+}
+.time h2::after {
+  background-color: teal;
+}
+.passion h2::after {
+  background-color: var(--main-color);
+}
+
+.box button::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.quality button {
+  border: 2px solid red;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.features .box:hover .box-body button {
+  color: white;
+  transition-delay: 0.1s;
+}
+.features .box:hover.quality button::before {
+  left: 0%;
+  background-color: red;
+  z-index: -1;
+}
+
+.time button {
+  border: 2px solid teal;
+  color: teal;
+  font-size: 20px;
+  font-weight: bold;
+}
+.features .box:hover.time button::before {
+  left: 0%;
+  background-color: teal;
+  z-index: -1;
+}
+
+.passion button {
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+.features .box:hover.passion button::before {
+  left: 0%;
+  background-color: var(--main-color);
+  z-index: -1;
+}
+
+/* End section features */
