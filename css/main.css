@@ -52,6 +52,8 @@ a {
 /* End Global Rules */
 
 /* Start Section Header */
+
+
 .logo h2 {
   color: var(--main-color);
   cursor: pointer;
@@ -106,7 +108,7 @@ nav ul li a {
   top: 15%; 
   width: 100%;
   z-index: 100;
- display: block;
+  opacity: 0;
   transition: var(--main-transition);
 }
 
