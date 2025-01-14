@@ -1,0 +1,282 @@
+/* Start Global Rules */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --main-color: #2196f3;
+  --alternate-color: #6ed1fa;
+  --main-transition: all 0.5s;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+}
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* End Global Rules */
+
+/* Start Section Header */
+.logo h2 {
+  color: var(--main-color);
+  cursor: pointer;
+}
+.header {
+  padding: 15px 0px;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 0px 0px black;
+}
+
+nav ul li {
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+nav ul li:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+nav ul li:hover a {
+  color: var(--main-color);
+}
+
+nav ul li:hover::before {
+  left: 0%;
+}
+
+nav ul li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--main-color);
+  bottom: 0%;
+  left: -100%;
+  transition: var(--main-transition);
+}
+
+nav ul li a {
+  color: black;
+}
+
+/* Start MegaMenu */
+.mega-menu {
+  background-color: white;
+  border-bottom: 2px solid var(--main-color);
+  padding: 10px 0px;
+  position: absolute;
+  top: 15%; 
+  width: 100%;
+  z-index: 100;
+ display: block;
+  transition: var(--main-transition);
+}
+
+nav ul li a:last-child:hover .mega-menu{
+  background-color: red;
+
+}
+
+
+
+
+
+.mega-content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+}
+.mega-content .links {
+  margin-left: 80px;
+}
+.mega-content ul li {
+  padding: 10px 0px;
+}
+.mega-content ul li:not(:last-child) {
+  border-bottom: 1px solid #DDD;
+}
+.mega-content ul li a {
+  color: var(--main-color);
+  font-weight: bold;
+  white-space: nowrap;
+}
+.mega-image img {
+  width: 350px;
+}
+/* End MegaMenu */
+
+@media (max-width: 768px) {
+  .header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo {
+    width: 90%;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 0px 0px;
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 991px) {
+  .mega-image {
+    display: none;
+  }
+  .mega-content .links {
+    flex: 1;
+  }
+}
+
+@media (max-width: 766px) {
+  .mega-content {
+    flex-direction: column;
+    gap: 0px;
+    padding: 15px;
+    margin: 5px;
+  }
+  .mega-content .links {
+    margin-left: 0px;
+  }
+  .mega-content ul li {
+    width: 100%;
+  }
+
+  .mega-content ul:first-of-type li:last-child {
+    border-bottom: 1px solid #DDD;
+  }
+}
+/* End Section Header */
+
+/* Start Section Home */
+.home {
+  position: relative;
+}
+
+.home h1 {
+  font-size: 23px;
+  color: var(--main-color);
+}
+
+.home p {
+  width: 80%;
+  line-height: 1.6;
+  font-size: 20px;
+  color: #66668D;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  right: 0;
+  width: 100%;
+  height: 80vh;
+  background-color: #ececec;
+  z-index: -1;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+.home-image img {
+  width: 500px;
+  position: relative;
+  top: -50px;
+  animation: img-move 1.3s infinite alternate;
+}
+
+@keyframes img-move {
+  from {
+    top: -50px;
+  }
+  to {
+    top: -10px;
+  }
+}
+
+.down-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  color: var(--main-color);
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.down-arrow:hover {
+  color: var(--alternate-color);
+}
+
+.down-arrow {
+  animation: up-down 1.5s infinite alternate;
+}
+
+@keyframes up-down {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: 10%;
+  }
+}
+
+@media (max-width: 992px) {
+  .home-image {
+    display: none;
+  }
+
+  .home .text {
+    margin-top: 15%;
+    text-align: center;
+  }
+
+  .home .text p {
+    margin: auto;
+  }
+}
+/* End Section Home */
