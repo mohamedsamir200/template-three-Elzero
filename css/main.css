@@ -533,15 +533,12 @@ nav ul li a:last-child:hover .mega-menu {
 }
 .quality .feat-image::after {
   background-color: rgba(246, 0, 0, 0.214);
-
 }
 .time .feat-image::after {
   background-color: rgba(9, 252, 171, 0.214);
-
 }
 .passion .feat-image::after {
   background-color: rgba(5, 251, 255, 0.214);
-
 }
 
 .box-body h2 {
@@ -617,3 +614,117 @@ nav ul li a:last-child:hover .mega-menu {
 }
 
 /* End section features */
+
+/* start section Testimonials */
+.testimonials {
+  background-color: var(--grey-color);
+  padding: 50px 0px;
+}
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 0px 15px;
+}
+.test-body {
+  background-color: white;
+  padding: 20px 15px;
+}
+.testimonials .container .box {
+  background-color: green;
+  position: relative;
+}
+.test-Image {
+  background-color: var(--grey-color);
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--grey-color);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: -2%;
+  top: -15%;
+  z-index: 2;
+}
+.test-Image img {
+  width: 65px;
+  border-radius: 50%;
+}
+
+.test-body h2 {
+  font-size: 20px;
+}
+.test-body h4,
+.test-body p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  margin: 15px 0px;
+}
+.test-body i:not(:last-child) {
+  color: gold;
+}
+
+/* End section Testimonials */
+
+/* start Section Team Members */
+.teamMember .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px 60px;
+  padding: 0px 15px;
+}
+.teamMember .container .box {
+  background-color: var(--grey-color);
+  padding: 50px 20px;
+  border-radius: 10px;
+  transition: var(--main-transition);
+  overflow: hidden;
+  position: relative;
+}
+.teamMember .container .box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  background-color: rgba(205, 180, 180, 0.791);
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.teamMember .container .box:hover {
+  filter: grayscale(30);
+}
+.teamMember .container .box:hover::before {
+  right: 0%;
+}
+.team-image {
+  position: relative;
+  transform: translateX(-35px);
+  
+}
+.team-image img{
+  width: 300px;
+  border-radius: 10px;
+
+}
+
+.teamMember .container .box .team-member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.teamMember .container .box .social-icons {
+ display: flex; 
+ flex-direction: column;
+ margin-right: 30px;
+}
+.teamMember .container .box .social-icons i {
+  margin: 10px 0px;
+}
+/* start Section Team Members */
