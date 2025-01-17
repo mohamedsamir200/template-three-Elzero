@@ -1213,14 +1213,21 @@ nav ul li a:last-child:hover .mega-menu {
 
 /* Start Section Awesome */
 .awesome {
-  height: 80vh;
+  min-height: 400px;
+  padding: 15px;
   background-image: url(../images/stats.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.awesome .overlay {
+
+.awesome::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1228,35 +1235,30 @@ nav ul li a:last-child:hover .mega-menu {
   height: 100%;
   background-color: #f2f3f490;
 }
-.awesome .overlay .container {
+.awesome .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  -webkit-box-shadow: 10px 10px 6px -14px rgba(0, 0, 0, 0.75);
 }
-.awesome .overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0px;
-}
-.awesome .overlay .box {
+
+.awesome .box {
   background-color: white;
   padding: 30px;
   text-align: center;
+  -webkit-box-shadow: 10px 10px 6px -14px rgba(0, 0, 0, 0.75);
+
   position: relative;
 }
-.awesome .overlay .box h1 {
+.awesome .box h1 {
   font-size: 40px;
   margin: 10px 0px;
 }
-.awesome .overlay .box h4 {
+.awesome .box h4 {
   font-size: 20px;
   color: var(--main-color);
   font-style: italic;
-
 }
-.awesome .overlay .box::before {
+.awesome .box::before {
   content: "";
   position: absolute;
   left: -3px;
@@ -1266,11 +1268,11 @@ nav ul li a:last-child:hover .mega-menu {
   background-color: var(--main-color);
   transition: var(--main-transition);
 }
-.awesome .overlay .box:hover::before {
+.awesome .box:hover::before {
   height: 100%;
 }
 
-.awesome .overlay .box::after {
+.awesome .box::after {
   content: "";
   position: absolute;
   right: -3px;
@@ -1280,7 +1282,12 @@ nav ul li a:last-child:hover .mega-menu {
   background-color: var(--main-color);
   transition: var(--main-transition);
 }
-.awesome .overlay .box:hover::after {
+.awesome .box:hover::after {
   height: 100%;
 }
 /* End Section Awesome */
+
+/* Start Discount Section */
+
+
+/* ُEnd Discount Section */
