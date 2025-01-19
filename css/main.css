@@ -919,6 +919,29 @@ nav ul li a:last-child:hover .mega-menu {
 /* End Section Work */
 
 /* Start Section Events */
+.events {
+  position: relative;
+}
+.dots {
+  position: absolute;
+  background-image: url("../images/dots.png");
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+}
+.dots-up {
+  right: 10px;
+  top: 0;
+}
+.dots-down {
+  left: 50px;
+  bottom: 0;
+}
+@media (max-width:991px) {
+  .dots {
+    display: none;
+  }
+}
 .events .container {
   padding: 0px 10px;
   display: flex;
@@ -1420,8 +1443,8 @@ footer .container .box:nth-child(1) {
 }
 
 footer .container .box:nth-child(2) {
-  ul li  {
-    padding: 20px 0px ;
+  ul li {
+    padding: 20px 0px;
     &:not(:last-child) {
       border-bottom: 1px solid;
     }
@@ -1430,7 +1453,7 @@ footer .container .box:nth-child(2) {
       margin-left: 15px;
     }
   }
-  
+
   ul li a {
     color: white;
   }
@@ -1447,7 +1470,7 @@ footer .container .box:nth-child(3) {
     align-items: center;
     gap: 10px;
   }
-  ul li i{
+  ul li i {
     font-size: 20px;
     color: var(--main-color);
   }
@@ -1462,3 +1485,4 @@ footer .container .box:nth-child(4) {
   }
 }
 /* End Footer */
+
